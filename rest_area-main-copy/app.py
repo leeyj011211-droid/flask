@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 
 import requests
-api_key = "AIzaSyDrteqoKbwc-ImJxoWKYiTkFO-IWqezj58"
+api_key = "Gemini_API키"
 check_url = f"https://generativelanguage.googleapis.com/v1/models?key={api_key}"
 try:
     models_data = requests.get(check_url).json()
@@ -153,7 +153,7 @@ def route():
 
     
 # Gemini API 설정
-#genai.configure(api_key="AIzaSyDDrwLZEZ2DhwKLtbkPp_C8sFjZjYIMIY8", transport='rest')
+#genai.configure(api_key="Gemini_API키", transport='rest')
 
 #model = genai.GenerativeModel('gemini-pro')
 
@@ -169,7 +169,7 @@ def get_rest_area_info():
         rest_name = data.get("name")
         
         # 아까 성공했던 목록에 있던 모델입니다.
-        api_key = "AIzaSyDDrwLZEZ2DhwKLtbkPp_C8sFjZjYIMIY8" 
+        api_key = "Gemini_API키" 
         
         # 1. 주소를 v1beta로 바꿉니다 (2.0 모델은 베타 주소에서 더 잘 작동할 때가 많습니다)
         # 2. 모델명은 목록에 있었던 gemini-2.5-flash-lite는 구라침
