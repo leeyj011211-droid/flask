@@ -172,8 +172,9 @@ def get_rest_area_info():
         api_key = "AIzaSyDDrwLZEZ2DhwKLtbkPp_C8sFjZjYIMIY8" 
         
         # 1. 주소를 v1beta로 바꿉니다 (2.0 모델은 베타 주소에서 더 잘 작동할 때가 많습니다)
-        # 2. 모델명은 목록에 있었던 gemini-2.5-flash-lite 입니다.
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"        
+        # 2. 모델명은 목록에 있었던 gemini-2.5-flash-lite는 구라침
+        # flash는 하루에 5번밖에 못함
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={api_key}"        
         payload = {
             "contents": [{"parts": [{"text": f"{rest_name} 해당 휴게소를 찾아서 실제로 판매중인 대표 메뉴 2개를 알려줘. 간단한 설명과 메뉴만 출력해. "}]}]
         }

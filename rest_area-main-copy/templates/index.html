@@ -56,18 +56,19 @@
       </div>
 
       <div id="route-meta" class="route-meta hidden">
-      <div class="meta-item">
-        <span class="meta-label">총 거리</span>
-        <span id="meta-distance" class="meta-value">0 km</span>
-      </div>
-      <div class="meta-divider"></div>
-      <div class="meta-item">
-        <span class="meta-label">예상 시간</span>
-        <span id="meta-time" class="meta-value">0분</span>
+        <div class="meta-item">
+          <span class="meta-label">총 거리</span>
+          <span id="meta-distance" class="meta-value">0 km</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-label">예상 시간</span>
+          <span id="meta-time" class="meta-value">0분</span>
+        </div>
       </div>
     </div>
 
-    <div id="results-area">
+    <div id="results-area" class="hidden">
       <div id="map"></div>
 
       <div id="filter-bar">
@@ -83,6 +84,40 @@
     </div>
 
   </div> <div id="autocomplete"></div>
+
+  <div id="rest-modal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeRestModal()"></div>
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeRestModal()">×</button>
+      
+      <div class="modal-header">
+        <div id="modal-highway" class="modal-highway">노선명</div>
+        <h2 id="modal-name" class="modal-title">휴게소 이름</h2>
+        <div class="modal-rating">⭐ <span id="modal-rating">0.0</span></div>
+      </div>
+
+      <div class="modal-section">
+        <h3>🍴 대표 메뉴</h3>
+        <div class="menu-card">
+          <div id="modal-menu-name" class="menu-name">메뉴명</div>
+          <div id="modal-menu-desc" class="menu-desc">Gemini 분석 중...</div>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <h3>⚡ 편의 시설</h3>
+        <div class="facility-grid">
+          <div id="fac-gas" class="facility">⛽ 주유소</div>
+          <div id="fac-ev" class="facility">⚡ 전기차</div>
+          <div id="fac-pharmacy" class="facility">💊 약국</div>
+          <div id="fac-baby" class="facility">👶 수유실</div>
+        </div>
+      </div>
+
+      <button id="modal-naver" class="naver-btn">네이버 지도에서 보기</button>
+    </div>
+  </div>
+
   <script src="/static/main.js"></script>
-  </body>
+</body>
 </html>
