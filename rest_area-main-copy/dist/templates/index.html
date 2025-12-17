@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>휴게소 길찾기</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- 네가 준 JS 키 삽입됨 -->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e6030b46cacbdc94cd3199395a3014da&libraries=services"></script>
+</head>
+
+<body>
+
+<div id="nav-box">
+    <input id="start" placeholder="출발지 입력">
+    <input id="end" placeholder="도착지 입력">
+    
+    <div id="btn-row">
+        <button onclick="clearInputs()" class="btn gray">다시입력</button>
+        <button class="btn gray">+ 경유지</button>
+        <button onclick="requestRoute()" class="btn blue">길찾기 ▶</button>
+    </div>
+</div>
+
+<div id="autocomplete"></div>
+
+<div id="container">
+    <div id="map"></div>
+
+    <div id="sidebar">
+        <h2>휴게소 목록</h2>
+        <div id="rest-list"></div>
+    </div>
+</div>
+
+<script src="/static/main.js"></script>
+</body>
+</html>

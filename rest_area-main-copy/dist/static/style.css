@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#nav-box {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 350px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+#nav-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#btn-row {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn.gray {
+    background: #eee;
+}
+
+.btn.blue {
+    background: #1e90ff;
+    color: white;
+}
+
+#autocomplete {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    width: 350px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-item:hover {
+    background: #f0f0f0;
+}
+
+#container {
+    display: flex;
+    height: 100vh;
+}
+
+#map {
+    flex: 3;
+}
+
+#sidebar {
+    flex: 1;
+    padding: 20px;
+    border-left: 2px solid #ddd;
+    overflow-y: auto;
+}

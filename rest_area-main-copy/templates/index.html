@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Highway Gourmet Road</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e6030b46cacbdc94cd3199395a3014da&libraries=services"></script>
+  <style>
+    /* 자동완성 목록 스타일 */
+    #autocomplete {
+      position: absolute; z-index: 100; background: white; width: 100%; 
+      max-width: 500px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      display: none; border: 1px solid #eee; margin-top: 5px;
+    }
+    .autocomplete-item { padding: 12px; cursor: pointer; border-bottom: 1px solid #f9f9f9; }
+    .autocomplete-item:hover { background: #f0f7ff; }
+    .hidden { display: none !important; }
+    /* 기존 스타일 호환을 위한 클래스 */
+    .active-best { background-color: #fef3c7; border-color: #fbbf24; }
+    .active-ev { background-color: #dcfce7; border-color: #22c55e; }
+    .active-gas { background-color: #fee2e2; border-color: #ef4444; }
+  </style>
+</head>
+
+<body>
+  <div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Highway Gourmet Road</h1>
+      <p>맛있는 휴식이 있는 여정을 큐레이션합니다</p>
+    </div>
+  </div>
+
+  <div id="container">
+    
+    <div id="nav-box">
+      <div class="nav-title">어디로 떠나시나요?</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>출발지</label>
+          <input id="start" placeholder="출발지 입력" autocomplete="off" />
+        </div>
+        <div class="field-divider">→</div>
+        <div class="field">
+          <label>목적지</label>
+          <input id="end" placeholder="도착지 입력" autocomplete="off" />
+        </div>
+      </div>
+
+      <div id="btn-row">
+        <button onclick="clearInputs()" class="btn gray">다시입력</button>
+        <button onclick="requestRoute()" class="btn blue">미식 로드 찾기 ▶</button>
+      </div>
+
+      <div id="route-meta" class="route-meta hidden">
+      <div class="meta-item">
+        <span class="meta-label">총 거리</span>
+        <span id="meta-distance" class="meta-value">0 km</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-label">예상 시간</span>
+        <span id="meta-time" class="meta-value">0분</span>
+      </div>
+    </div>
+
+    <div id="results-area">
+      <div id="map"></div>
+
+      <div id="filter-bar">
+        <button id="filter-best" class="chip">⭐ 맛집 4.0+</button>
+        <button id="filter-ev" class="chip">⚡ 전기차</button>
+        <button id="filter-gas" class="chip">⛽ 주유소</button>
+      </div>
+
+      <div id="sidebar">
+        <div class="sidebar-title">발견된 미식 휴게소</div>
+        <div id="rest-list" class="timeline"></div>
+      </div>
+    </div>
+
+  </div> <div id="autocomplete"></div>
+  <script src="/static/main.js"></script>
+  </body>
+</html>
